@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace LilitabSDK
+namespace EndoClientDemo
 {
     public class Application
     {
