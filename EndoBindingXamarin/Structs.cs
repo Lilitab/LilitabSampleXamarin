@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace EndoBindingXamarin
 {
-    [Native]
+     [Native]
     public enum EndoExecutionState : long
     {
         Uninitialized = 0,
@@ -28,45 +28,30 @@ namespace EndoBindingXamarin
         //[Verify (PlatformInvoke)]
         public static extern EndoExecutionState EndoState ();
 
-        // extern void EndoLog (NSString *format, ...);
+        // extern void EndoLog (NSString *message);
         [DllImport ("__Internal")]
         //[Verify (PlatformInvoke)]
-        public static extern void EndoLog (NSString format, IntPtr varArgs);
+        public static extern void EndoLog (NSString message);
 
-        // extern void EndoLogWithCategory (NSString *category, NSString *format, ...);
+        // extern void EndoLogWithCategory (NSString *category, NSString *message);
         [DllImport ("__Internal")]
         //[Verify (PlatformInvoke)]
-        public static extern void EndoLogWithCategory (NSString category, NSString format, IntPtr varArgs);
+        public static extern void EndoLogWithCategory (NSString category, NSString message);
 
-        // extern void EndoLogVA (NSString *format, va_list vargs);
-        [DllImport ("__Internal")]
-        //[Verify (PlatformInvoke)]
-        public static extern unsafe void EndoLogVA (NSString format, sbyte* vargs);
+        // extern void EndoLog (NSString *message);
+        //[DllImport ("__Internal")]
+        ////[Verify (PlatformInvoke)]
+        //public static extern void EndoLog (NSString message);
 
-        // extern void EndoLogWithCategoryVA (NSString *category, NSString *format, va_list vargs);
+        // extern void EndoLogStackTrace (NSString *message);
         [DllImport ("__Internal")]
         //[Verify (PlatformInvoke)]
-        public static extern unsafe void EndoLogWithCategoryVA (NSString category, NSString format, sbyte* vargs);
+        public static extern void EndoLogStackTrace (NSString message);
 
-        // extern void EndoLogStackTrace (NSString *format, ...);
+        // extern void EndoLogWithCategoryStackTrace (NSString *category, NSString *message);
         [DllImport ("__Internal")]
         //[Verify (PlatformInvoke)]
-        public static extern void EndoLogStackTrace (NSString format, IntPtr varArgs);
-
-        // extern void EndoLogWithCategoryStackTrace (NSString *category, NSString *format, ...);
-        [DllImport ("__Internal")]
-        //[Verify (PlatformInvoke)]
-        public static extern void EndoLogWithCategoryStackTrace (NSString category, NSString format, IntPtr varArgs);
-
-        // extern void EndoLogStackTraceVA (NSString *format, va_list vargs);
-        [DllImport ("__Internal")]
-        //[Verify (PlatformInvoke)]
-        public static extern unsafe void EndoLogStackTraceVA (NSString format, sbyte* vargs);
-
-        // extern void EndoLogWithCategoryStackTraceVA (NSString *category, NSString *format, va_list vargs);
-        [DllImport ("__Internal")]
-        //[Verify (PlatformInvoke)]
-        public static extern unsafe void EndoLogWithCategoryStackTraceVA (NSString category, NSString format, sbyte* vargs);
+        public static extern void EndoLogWithCategoryStackTrace (NSString category, NSString message);
 
         // extern void EndoAddCommand (NSString *cmd, NSString *description, void (^cmdBlock)(NSArray<NSString *> *));
         [DllImport ("__Internal")]
@@ -83,4 +68,5 @@ namespace EndoBindingXamarin
         //[Verify (PlatformInvoke)]
         public static extern void EndoNSLogPassthrough (bool yesToNSLogMessages_noToNot);
     }
+
 }

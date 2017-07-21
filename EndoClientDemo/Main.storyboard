@@ -36,7 +36,7 @@
                                     <constraint id="312" firstItem="263" firstAttribute="width" constant="200"/>
                                 </constraints>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="264" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="264" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" editable="NO">
                                 <rect key="frame" x="50" y="121" width="500" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

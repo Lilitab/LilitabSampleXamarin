@@ -6,7 +6,6 @@
 //  Copyright © 2015-2016 MynaBay. All rights reserved.
 //
 
-
 #import <UIKit/UIKit.h>
 
     //! Project version number for EndoClient.

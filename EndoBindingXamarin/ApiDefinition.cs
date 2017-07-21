@@ -20,16 +20,5 @@ namespace EndoBindingXamarin
         IntPtr EndoClientVersionString { get; }
 	}
 
-	// @interface EndoXamarin : NSObject
-	[BaseType(typeof(NSObject))]
-	interface EndoXamarin
-	{
-		// -(void)EndoStartStop:(BOOL)yesToStart_noToStop;
-		[Export("EndoStartStop:")]
-		void EndoStartStop(bool yesToStart_noToStop);
 
-		// -(void)EndoNSLogPassthrough:(BOOL)yesToNSLogMessages_noToNot;
-		[Export("EndoNSLogPassthrough:")]
-		void EndoNSLogPassthrough(bool yesToNSLogMessages_noToNot);
-	}
 }

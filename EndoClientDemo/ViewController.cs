@@ -2,6 +2,7 @@
 using UIKit;
 using Foundation;
 using EndoBindingXamarin;
+using LilitabXamarinBinding;
 namespace EndoClientDemo
 {
     public partial class ViewController : UIViewController
@@ -16,8 +17,15 @@ namespace EndoClientDemo
             base.ViewDidLoad();
 
 			Console.WriteLine("Testing Endo Client");
+			var Lilitab = new LilitabXamarinBinding.LilitabSDK();
 
-        }
+            LilitabSDK.Singleton.DebugMessages = (NSString obj) => 
+            {
+                Console.WriteLine("DebugMessages:{0}", obj);
+			};
+
+            //EndoClientFunction.EndoLog((NSString)"Endo Testing");
+		}
 
 
 		public override void ViewDidAppear(bool animated)
@@ -47,14 +55,20 @@ namespace EndoClientDemo
 			{
 				Console.WriteLine("Status: {0}", arg2.Description);
 
-				if (arg1) // 
+				LilitabSDK.Singleton.DebugMessages = (NSString obj) =>
 				{
-                    textView.Text = "True\n" + arg2.Description;
-				}
-				else
-				{
-					textView.Text = "False\n" + arg2.Description;
-				}
+					Console.WriteLine("DebugMessages:{0}", obj);
+					if (arg1) // 
+					{
+                        textView.Text = "True\n" + arg2.Description + "\n\n\nDebugMessages:" + obj ;
+					}
+					else
+					{
+						textView.Text = "False\n" + arg2.Description + "\n\n\nDebugMessages:" + obj;
+					}
+				};
+
+				
             });
 		}
 

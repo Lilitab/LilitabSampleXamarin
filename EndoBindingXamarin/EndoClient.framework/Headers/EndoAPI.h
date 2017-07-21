@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EndoXamarin.h"
 
     ///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -21,10 +20,18 @@ typedef NS_ENUM(NSInteger, EndoExecutionState) {
     ///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////
 
-#if defined(__cplusplus)
-    #define ENDO_EXTERN extern "C"
-#else
-    #define ENDO_EXTERN extern
+#if !defined(VARIADIC_STYLE) && !defined(STRING_STYLE)
+    #if defined(__has_include) && __has_include(<uchar.h>)
+        #define VARIADIC_STYLE
+        #if defined(__cplusplus)
+            #define ENDO_EXTERN extern "C"
+        #else
+            #define ENDO_EXTERN extern
+        #endif
+    #else
+        #define STRING_STYLE
+        #define ENDO_EXTERN
+    #endif
 #endif
 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -35,7 +42,6 @@ typedef NS_ENUM(NSInteger, EndoExecutionState) {
     // In this configuration, execution state is EndoStateUninitialized and logging is routed to NSLog.
     // Use EndoNSLogPassthrough(NO) to prevent uninitialized Endo from writing to NSLog.
     //
-
 ENDO_EXTERN void EndoStartStop(BOOL yesToStart_noToStop);
 ENDO_EXTERN EndoExecutionState EndoState();
 
@@ -45,11 +51,19 @@ ENDO_EXTERN EndoExecutionState EndoState();
     // These functions route to NSLog if execution state is EndoStateIdle or EndoStateUninitialized.
     // The EndoNSLogPassThrough is honored regardless of the execution state.
     //
-ENDO_EXTERN void EndoLog(NSString* format, ...);
-ENDO_EXTERN void EndoLogWithCategory(NSString* category, NSString* format, ...);
+#ifdef VARIADIC_STYLE
+    ENDO_EXTERN void EndoLog(NSString* format, ...);
+    ENDO_EXTERN void EndoLogWithCategory(NSString* category, NSString* format, ...);
 
-ENDO_EXTERN void EndoLogVA(NSString* format, va_list vargs);
-ENDO_EXTERN void EndoLogWithCategoryVA(NSString* category, NSString* format, va_list vargs);
+    ENDO_EXTERN void EndoLogVA(NSString* format, va_list vargs);
+    ENDO_EXTERN void EndoLogWithCategoryVA(NSString* category, NSString* format, va_list vargs);
+#endif
+#ifdef STRING_STYLE
+    void EndoLog(NSString* message);
+    void EndoLogWithCategory(NSString* category, NSString* message);
+#endif
+
+void EndoLog(NSString* message);
 
     ///////////////////////////////////////////////////////////////////////////////////////
     // Endo functions to dump stack traces
@@ -57,11 +71,17 @@ ENDO_EXTERN void EndoLogWithCategoryVA(NSString* category, NSString* format, va_
     // These functions route to NSLog if execution state is EndoStateIdle or EndoStateUninitialized.
     // The EndoNSLogPassThrough is honored regardless of the execution state.
     //
-ENDO_EXTERN void EndoLogStackTrace(NSString* format, ...);
-ENDO_EXTERN void EndoLogWithCategoryStackTrace(NSString* category, NSString* format, ...);
+#ifdef VARIADIC_STYLE
+    ENDO_EXTERN void EndoLogStackTrace(NSString* format, ...);
+    ENDO_EXTERN void EndoLogWithCategoryStackTrace(NSString* category, NSString* format, ...);
 
-ENDO_EXTERN void EndoLogStackTraceVA(NSString* format, va_list vargs);
-ENDO_EXTERN void EndoLogWithCategoryStackTraceVA(NSString* category, NSString* format, va_list vargs);
+    ENDO_EXTERN void EndoLogStackTraceVA(NSString* format, va_list vargs);
+    ENDO_EXTERN void EndoLogWithCategoryStackTraceVA(NSString* category, NSString* format, va_list vargs);
+#endif
+#ifdef STRING_STYLE
+    void EndoLogStackTrace(NSString* message);
+    void EndoLogWithCategoryStackTrace(NSString* category, NSString* message);
+#endif
 
     ///////////////////////////////////////////////////////////////////////////////////////
     // Endo function to add an execution block that can be called from the Endo command line.
