@@ -16,8 +16,6 @@ namespace EndoClientDemo
         {
             base.ViewDidLoad();
 
-			Console.WriteLine("Testing Endo Client");
-			var Lilitab = new LilitabXamarinBinding.LilitabSDK();
 
             LilitabSDK.Singleton.DebugMessages = (NSString obj) => 
             {
