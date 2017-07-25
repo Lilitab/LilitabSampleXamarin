@@ -3,6 +3,7 @@ using UIKit;
 using Foundation;
 using EndoBindingXamarin;
 using LilitabXamarinBinding;
+
 namespace EndoClientDemo
 {
     public partial class ViewController : UIViewController
@@ -37,37 +38,45 @@ namespace EndoClientDemo
 
         partial void endoStopBtnClick(UIButton sender)
         {
-            EndoClientFunction.EndoStartStop(yesToStart_noToStop: false);
+            Endo.Stop();
+
+            //EndoClientDemo.(yesToStart_noToStop: false);
 		}
 
         partial void endoStartBtnClick(UIButton sender)
         {
-			EndoClientFunction.EndoStartStop(yesToStart_noToStop: true);
+            Endo.Start();
 		}
 
         partial void lilitabStatusBtn(UIButton sender)
         {
-			var Lilitab = new LilitabXamarinBinding.LilitabSDK();
-
-			Lilitab.Status((bool arg1, Foundation.NSDictionary arg2) =>
+			LilitabSDK.Singleton.Status((bool arg1, Foundation.NSDictionary arg2) =>
 			{
+				Endo.Log(arg2.Description);
 				Console.WriteLine("Status: {0}", arg2.Description);
-
-				LilitabSDK.Singleton.DebugMessages = (NSString obj) =>
+				if (arg1) // 
 				{
-					Console.WriteLine("DebugMessages:{0}", obj);
-					if (arg1) // 
-					{
-                        textView.Text = "True\n" + arg2.Description + "\n\n\nDebugMessages:" + obj ;
-					}
-					else
-					{
-						textView.Text = "False\n" + arg2.Description + "\n\n\nDebugMessages:" + obj;
-					}
-				};
-
-				
-            });
+					textView.Text = "True\n" + arg2.Description;
+				}
+				else
+				{
+					textView.Text = "False\n" + arg2.Description;
+				}
+			});
+		
+			//Lilitab.Status((bool arg1, Foundation.NSDictionary arg2) =>
+			//{
+    //            Endo.Log(arg2.Description);
+				//Console.WriteLine("Status: {0}", arg2.Description);
+				//if (arg1) // 
+				//{
+    //                textView.Text = "True\n" + arg2.Description ;
+				//}
+				//else
+				//{
+				//	textView.Text = "False\n" + arg2.Description ;
+				//}
+            //});
 		}
 
         public override void DidReceiveMemoryWarning()
