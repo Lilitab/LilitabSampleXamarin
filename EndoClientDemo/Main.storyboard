@@ -40,19 +40,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <string key="text">True{
-    "Accessory Type" = Dock;
-    "Comm Protocol" = "com.lilitab.dock1";
-    "Comm Status" = ok;
-    "Dock BL Version" = "06.00, 30Mar16, 16:39";
-    "Dock FW Version" = "02.41, 25Apr17, 09:36";
-    "Dock HW Type" = "SmartDOCK, G25SD8";
-    "Dock HW Version" = "iOS Serial, Rev A";
-    POSIX = 1500958852;
-    ProgramTime = 4497;
-    UUID = 49FF71067277555428570767;
-    state = "4:locked";
-}</string>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="281" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="175" y="57" width="250" height="35"/>
