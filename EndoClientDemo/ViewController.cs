@@ -16,31 +16,11 @@ namespace EndoClientDemo
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-
-            LilitabSDK.Singleton.DebugMessages = (NSString obj) => 
-            {
-                Console.WriteLine("DebugMessages:{0}", obj);
-			};
-
-            //EndoClientFunction.EndoLog((NSString)"Endo Testing");
-		}
-
-
-		public override void ViewDidAppear(bool animated)
-		{
-			base.ViewDidAppear(animated);
-			//EndoClientFunction.EndoAddCommand(cmd: (NSString)"Testing", description: (NSString)"Description", cmdBlock: (NSArray<NSString> obj) =>
-		   //{
-
-		   //}); 
 		}
 
         partial void endoStopBtnClick(UIButton sender)
         {
             Endo.Stop();
-
-            //EndoClientDemo.(yesToStart_noToStop: false);
 		}
 
         partial void endoStartBtnClick(UIButton sender)
@@ -53,30 +33,15 @@ namespace EndoClientDemo
 			LilitabSDK.Singleton.Status((bool arg1, Foundation.NSDictionary arg2) =>
 			{
 				Endo.Log(arg2.Description);
-				Console.WriteLine("Status: {0}", arg2.Description);
-				if (arg1) // 
+				if (arg1)
 				{
-					textView.Text = "True\n" + arg2.Description;
+					textView.Text = "True:\n" + arg2.Description;
 				}
 				else
 				{
-					textView.Text = "False\n" + arg2.Description;
+					textView.Text = "False:\n" + arg2.Description;
 				}
 			});
-		
-			//Lilitab.Status((bool arg1, Foundation.NSDictionary arg2) =>
-			//{
-    //            Endo.Log(arg2.Description);
-				//Console.WriteLine("Status: {0}", arg2.Description);
-				//if (arg1) // 
-				//{
-    //                textView.Text = "True\n" + arg2.Description ;
-				//}
-				//else
-				//{
-				//	textView.Text = "False\n" + arg2.Description ;
-				//}
-            //});
 		}
 
         public override void DidReceiveMemoryWarning()
