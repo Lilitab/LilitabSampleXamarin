@@ -6,11 +6,11 @@
       <File FileName="EndoClientDemo/Info.plist" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.LilitabClientDemo PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E660363A-3AA4-46A4-AB5C-E36BCFB25D8A" />
+  <MonoDevelop.Ide.ItemProperties.LilitabClientDemo PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.01d9a9ed4ca1533e11a5c2d8211324ebf6e0841a" />
 </Properties>
