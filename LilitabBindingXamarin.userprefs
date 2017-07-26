@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{6972107A-E1CE-49E3-A363-723ADD33D56B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EndoClientDemo/ViewController.cs">
+    <Files>
+      <File FileName="EndoClientDemo/ViewController.cs" Line="23" Column="14" />
+      <File FileName="EndoClientDemo/Main.storyboard" />
+      <File FileName="EndoClientDemo/Info.plist" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LilitabClientDemo PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E660363A-3AA4-46A4-AB5C-E36BCFB25D8A" />
+</Properties>
