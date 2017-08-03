@@ -3,3 +3,8 @@
 /Users/peerlogic/Projects/Github/LilitabSDKXamarin/EndoBindingXamarin/obj/Debug/LilitabBindingXamarin.csproj.CoreCompileInputs.cache
 /Users/peerlogic/Projects/Github/LilitabSDKXamarin/EndoBindingXamarin/obj/Debug/EndoBindingXamarin.dll
 /Users/peerlogic/Projects/Github/LilitabSDKXamarin/EndoBindingXamarin/obj/Debug/EndoBindingXamarin.pdb
+/Users/kevin/MynaBay/Source/Lilitab/LilitabSDKXamarin/EndoBindingXamarin/bin/Debug/EndoBindingXamarin.dll
+/Users/kevin/MynaBay/Source/Lilitab/LilitabSDKXamarin/EndoBindingXamarin/bin/Debug/EndoBindingXamarin.pdb
+/Users/kevin/MynaBay/Source/Lilitab/LilitabSDKXamarin/EndoBindingXamarin/obj/Debug/LilitabBindingXamarin.csproj.CoreCompileInputs.cache
+/Users/kevin/MynaBay/Source/Lilitab/LilitabSDKXamarin/EndoBindingXamarin/obj/Debug/EndoBindingXamarin.dll
+/Users/kevin/MynaBay/Source/Lilitab/LilitabSDKXamarin/EndoBindingXamarin/obj/Debug/EndoBindingXamarin.pdb
