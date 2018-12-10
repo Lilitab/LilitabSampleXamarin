@@ -108,14 +108,6 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="LilitabSDK Version .cs" />
-    <Compile Include="LilitabSDK Version .designer.cs">
-      <DependentUpon>LilitabSDK Version .cs</DependentUpon>
-    </Compile>
-    <Compile Include="LilitabSDK Version 1.1 %28Dec 10 2018%29.cs" />
-    <Compile Include="LilitabSDK Version 1.1 %28Dec 10 2018%29.designer.cs">
-      <DependentUpon>LilitabSDK Version 1.1 %28Dec 10 2018%29.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LilitabXamarinBinding\LilitabXamarinBinding.csproj">
