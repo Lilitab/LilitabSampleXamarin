@@ -21,53 +21,9 @@ namespace LilitabXamarinBinding
     //
     // Once you've done that, you're ready to move on to binding the API...
     //
-    //
-    // Here is where you'd define your API definition for the native Objective-C library.
-    //
-    // For example, to bind the following Objective-C class:
-    //
-    //     @interface Widget : NSObject {
-    //     }
-    //
-    // The C# binding would look like this:
-    //
-    //     [BaseType (typeof (NSObject))]
-    //     interface Widget {
-    //     }
-    //
-    // To bind Objective-C properties, such as:
-    //
-    //     @property (nonatomic, readwrite, assign) CGPoint center;
-    //
-    // You would add a property definition in the C# interface like so:
-    //
-    //     [Export ("center")]
-    //     CGPoint Center { get; set; }
-    //
-    // To bind an Objective-C method, such as:
-    //
-    //     -(void) doSomething:(NSObject *)object atIndex:(NSInteger)index;
-    //
-    // You would add a method definition to the C# interface like so:
-    //
-    //     [Export ("doSomething:atIndex:")]
-    //     void DoSomething (NSObject object, int index);
-    //
-    // Objective-C "constructors" such as:
-    //
-    //     -(id)initWithElmo:(ElmoMuppet *)elmo;
-    //
-    // Can be bound as:
-    //
-    //     [Export ("initWithElmo:")]
-    //     IntPtr Constructor (ElmoMuppet elmo);
-    //
-    // For more information, see http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/
-    //
-
 
     [Static]
-    //[Verify(ConstantsInterfaceAssociation)]
+    // [Verify(ConstantsInterfaceAssociation)]
     partial interface Constants
     {
         // extern double LilitabSDKVersionNumber;
@@ -86,37 +42,37 @@ namespace LilitabXamarinBinding
         // +(LilitabSDK *)singleton;
         [Static]
         [Export("singleton")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         LilitabSDK Singleton { get; }
 
         // +(NSNotificationName)didConnectNotification;
         [Static]
         [Export("didConnectNotification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string DidConnectNotification { get; }
 
         // +(NSNotificationName)didDisconnectNotification;
         [Static]
         [Export("didDisconnectNotification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string DidDisconnectNotification { get; }
 
         // +(NSNotificationName)dockStatusNotification;
         [Static]
         [Export("dockStatusNotification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string DockStatusNotification { get; }
 
         // +(NSNotificationName)swipeEnableChangeNotification;
         [Static]
         [Export("swipeEnableChangeNotification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string SwipeEnableChangeNotification { get; }
 
         // +(NSNotificationName)readerStatusNotification;
         [Static]
         [Export("readerStatusNotification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string ReaderStatusNotification { get; }
 
         // @property (readonly, nonatomic) Lilitab_Accessory_Type accessoryType;
@@ -137,7 +93,7 @@ namespace LilitabXamarinBinding
 
         // -(CBPeripheral *)selectedBLEDevice;
         [Export("selectedBLEDevice")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         CBPeripheral SelectedBLEDevice { get; }
 
         // @property (readonly, nonatomic) BOOL isAttached;
@@ -192,13 +148,9 @@ namespace LilitabXamarinBinding
         [Export("dockLiveStatusInterval")]
         double DockLiveStatusInterval { get; set; }
 
-        // @property (readonly, nonatomic) NSDictionary<NSString *,NSString *> * lastDockLiveStatus;
-        [Export("lastDockLiveStatus")]
-        NSDictionary<NSString, NSString> LastDockLiveStatus { get; }
-
-        // -(void)updateFirmware:(NSData *)firmware options:(NSDictionary<NSString *,NSString *> *)optionsDict withProgress:(void (^)(float))progressBlock withCompletion:(void (^)(BOOL))completionBlock;
+        // -(void)updateFirmware:(NSData *)firmware options:(NSDictionary *)optionsDict withProgress:(void (^)(float))progressBlock withCompletion:(void (^)(BOOL))completionBlock;
         [Export("updateFirmware:options:withProgress:withCompletion:")]
-        void UpdateFirmware(NSData firmware, NSDictionary<NSString, NSString> optionsDict, Action<float> progressBlock, Action<bool> completionBlock);
+        void UpdateFirmware(NSData firmware, NSDictionary optionsDict, Action<float> progressBlock, Action<bool> completionBlock);
 
         // -(void)cancelFirmwareUpdate;
         [Export("cancelFirmwareUpdate")]
@@ -259,7 +211,7 @@ namespace LilitabXamarinBinding
 
         // -(UIImage *)getSignatureImage;
         [Export("getSignatureImage")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         UIImage SignatureImage { get; }
 
         // -(void)clearSignatureImage;
@@ -301,7 +253,7 @@ namespace LilitabXamarinBinding
 
         // -(UIImage *)getSignatureImage;
         [Export("getSignatureImage")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         UIImage SignatureImage { get; }
 
         // -(void)clearSignatureImage;
@@ -325,10 +277,6 @@ namespace LilitabXamarinBinding
         [Export("message", ArgumentSemantic.Strong)]
         string Message { get; set; }
 
-        // @property (assign, nonatomic) BOOL animate;
-        [Export("animate")]
-        bool Animate { get; set; }
-
         // @property (copy, nonatomic) void (^cancelPressBlock)();
         [Export("cancelPressBlock", ArgumentSemantic.Copy)]
         Action CancelPressBlock { get; set; }
@@ -342,29 +290,24 @@ namespace LilitabXamarinBinding
         [Export("message", ArgumentSemantic.Strong)]
         string Message { get; set; }
 
-        // @property (assign, nonatomic) BOOL animate;
-        [Export("animate")]
-        bool Animate { get; set; }
-
         // @property (copy, nonatomic) void (^cancelPressBlock)();
         [Export("cancelPressBlock", ArgumentSemantic.Copy)]
         Action CancelPressBlock { get; set; }
+    }
+
+    // @interface LilitabBLEHelpView : UIView
+    [BaseType(typeof(UIView))]
+    interface LilitabBLEHelpView
+    {
+        // @property (copy, atomic) void (^closePressBlock)();
+        [Export("closePressBlock", ArgumentSemantic.Copy)]
+        Action ClosePressBlock { get; set; }
     }
 
     // @interface LilitabBLEHelpOverlayView : UIView
     [BaseType(typeof(UIView))]
     interface LilitabBLEHelpOverlayView
     {
-        // +(instancetype)helpOverlay_Magtek;
-        [Static]
-        [Export("helpOverlay_Magtek")]
-        LilitabBLEHelpOverlayView HelpOverlay_Magtek();
-
-        // +(instancetype)helpOverlay_StarPrint;
-        [Static]
-        [Export("helpOverlay_StarPrint")]
-        LilitabBLEHelpOverlayView HelpOverlay_StarPrint();
-
         // @property (copy, atomic) void (^closePressBlock)();
         [Export("closePressBlock", ArgumentSemantic.Copy)]
         Action ClosePressBlock { get; set; }
@@ -376,86 +319,70 @@ namespace LilitabXamarinBinding
     {
         // -(NSString *)enterpriseId;
         [Export("enterpriseId")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string EnterpriseId { get; }
 
         // -(NSString *)groupId;
         [Export("groupId")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string GroupId { get; }
 
         // -(NSString *)tabletId;
         [Export("tabletId")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string TabletId { get; }
 
         // -(NSString *)dockId;
         [Export("dockId")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string DockId { get; }
 
         // +(NSNotificationName)KMS_COORDINATES_CHANGED_Notification;
         [Static]
         [Export("KMS_COORDINATES_CHANGED_Notification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string KMS_COORDINATES_CHANGED_Notification { get; }
 
         // -(UIColor *)backgroundColor;
         [Export("backgroundColor")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         UIColor BackgroundColor { get; }
 
         // +(NSNotificationName)KMS_BACKGROUNDCOLOR_CHANGED_Notification;
         [Static]
         [Export("KMS_BACKGROUNDCOLOR_CHANGED_Notification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string KMS_BACKGROUNDCOLOR_CHANGED_Notification { get; }
 
         // -(NSURLRequest *)homeUrlRequest;
         [Export("homeUrlRequest")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         NSUrlRequest HomeUrlRequest { get; }
 
         // -(NSURLRequest *)tabletRegistrationUrlRequest;
         [Export("tabletRegistrationUrlRequest")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         NSUrlRequest TabletRegistrationUrlRequest { get; }
 
         // -(NSURLRequest *)dockRegistrationUrlRequest;
         [Export("dockRegistrationUrlRequest")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         NSUrlRequest DockRegistrationUrlRequest { get; }
-
-        // -(void)showPortal;
-        [Export("showPortal")]
-        void ShowPortal();
 
         // -(void)setDockLaunchAppName:(NSString *)name;
         [Export("setDockLaunchAppName:")]
         void SetDockLaunchAppName(string name);
 
-        // +(NSNotificationName)NETWORK_REACHABILITY_CHANGED_Notification;
+        // +(NSNotificationName)KMS_WEBVIEW_REQUEST_Notification;
         [Static]
-        [Export("NETWORK_REACHABILITY_CHANGED_Notification")]
-        //[Verify(MethodToProperty)]
-        string NETWORK_REACHABILITY_CHANGED_Notification { get; }
-
-        // +(NSNotificationName)KMS_SERVICE_REACHABILITY_CHANGED_Notification;
-        [Static]
-        [Export("KMS_SERVICE_REACHABILITY_CHANGED_Notification")]
-        //[Verify(MethodToProperty)]
-        string KMS_SERVICE_REACHABILITY_CHANGED_Notification { get; }
-
-        // +(NSNotificationName)HOMEPAGE_REACHABILITY_CHANGED_Notification;
-        [Static]
-        [Export("HOMEPAGE_REACHABILITY_CHANGED_Notification")]
-        //[Verify(MethodToProperty)]
-        string HOMEPAGE_REACHABILITY_CHANGED_Notification { get; }
+        [Export("KMS_WEBVIEW_REQUEST_Notification")]
+        // [Verify(MethodToProperty)]
+        string KMS_WEBVIEW_REQUEST_Notification { get; }
 
         // +(KMS *)singleton;
         [Static]
         [Export("singleton")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         KMS Singleton { get; }
 
         // +(void)setSDKLicenseKey:(NSDictionary<NSString *,NSObject *> *)licenseObj;
@@ -481,7 +408,7 @@ namespace LilitabXamarinBinding
         // +(NSNotificationName)helpButtonPress_Notification;
         [Static]
         [Export("helpButtonPress_Notification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string HelpButtonPress_Notification { get; }
     }
 
@@ -492,7 +419,7 @@ namespace LilitabXamarinBinding
         // +(NSNotificationName)homeButtonPress_Notification;
         [Static]
         [Export("homeButtonPress_Notification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string HomeButtonPress_Notification { get; }
     }
 
@@ -506,7 +433,7 @@ namespace LilitabXamarinBinding
         void CloseKMSMenu();
     }
 
-    // @protocol KMSUnlockButtonDelegate
+    // @protocol KMSUnlockButtonDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
     interface KMSUnlockButtonDelegate
@@ -544,12 +471,12 @@ namespace LilitabXamarinBinding
 
         // @optional -(UIView * _Nullable)getDomainLimitErrorView;
         [NullAllowed, Export("getDomainLimitErrorView")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         UIView DomainLimitErrorView { get; }
 
         // @optional -(UIView * _Nullable)getNoNetworkErrorView;
         [NullAllowed, Export("getNoNetworkErrorView")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         UIView NoNetworkErrorView { get; }
     }
 
@@ -591,29 +518,20 @@ namespace LilitabXamarinBinding
         // +(NSNotificationName)SHOW_PROGRESS_Notification;
         [Static]
         [Export("SHOW_PROGRESS_Notification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string SHOW_PROGRESS_Notification { get; }
 
         // +(NSNotificationName)UPDATE_PROGRESS_Notification;
         [Static]
         [Export("UPDATE_PROGRESS_Notification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string UPDATE_PROGRESS_Notification { get; }
 
         // +(NSNotificationName)HIDE_PROGRESS_Notification;
         [Static]
         [Export("HIDE_PROGRESS_Notification")]
-        //[Verify(MethodToProperty)]
+        // [Verify(MethodToProperty)]
         string HIDE_PROGRESS_Notification { get; }
-    }
-
-    // @interface KMSDockStatusViewController : UIViewController
-    [BaseType(typeof(UIViewController))]
-    interface KMSDockStatusViewController
-    {
-        // -(void)copyFieldsToPasteboard;
-        [Export("copyFieldsToPasteboard")]
-        void CopyFieldsToPasteboard();
     }
 
     // @interface KMSBarcodeScanView : UIView
@@ -680,102 +598,6 @@ namespace LilitabXamarinBinding
         // -(void)stopScanner;
         [Export("stopScanner")]
         void StopScanner();
-    }
-
-    // @interface KMSReaderStatusViewController : UIViewController
-    [BaseType(typeof(UIViewController))]
-    interface KMSReaderStatusViewController
-    {
-        // -(void)copyFieldsToPasteboard;
-        [Export("copyFieldsToPasteboard")]
-        void CopyFieldsToPasteboard();
-    }
-
-    // @interface KMSGeolocateMenuViewController : UIViewController
-    [BaseType(typeof(UIViewController))]
-    interface KMSGeolocateMenuViewController
-    {
-    }
-
-    // @interface KMSPinpadViewController : UIViewController
-    [BaseType(typeof(UIViewController))]
-    interface KMSPinpadViewController
-    {
-        // +(NSNotificationName)SHOW_PINPAD_NOTIFICATION;
-        [Static]
-        [Export("SHOW_PINPAD_NOTIFICATION")]
-        //[Verify(MethodToProperty)]
-        string SHOW_PINPAD_NOTIFICATION { get; }
-
-        // +(NSNotificationName)HIDE_PINPAD_NOTIFICATION;
-        [Static]
-        [Export("HIDE_PINPAD_NOTIFICATION")]
-        //[Verify(MethodToProperty)]
-        string HIDE_PINPAD_NOTIFICATION { get; }
-    }
-
-    // @interface KMSPrinterStatusViewController : UIViewController
-    [BaseType(typeof(UIViewController))]
-    interface KMSPrinterStatusViewController
-    {
-        // -(void)copyFieldsToPasteboard;
-        [Export("copyFieldsToPasteboard")]
-        void CopyFieldsToPasteboard();
-    }
-
-    // @interface KMSBarsViewController : UIViewController
-    [BaseType(typeof(UIViewController))]
-    interface KMSBarsViewController
-    {
-        // -(void)show;
-        [Export("show")]
-        void Show();
-
-        // -(void)hide;
-        [Export("hide")]
-        void Hide();
-
-        [Wrap("WeakUnlockButtonDelegate")]
-        KMSUnlockButtonDelegate UnlockButtonDelegate { get; set; }
-
-        // @property (nonatomic, strong) id<KMSUnlockButtonDelegate> unlockButtonDelegate;
-        [NullAllowed, Export("unlockButtonDelegate", ArgumentSemantic.Strong)]
-        NSObject WeakUnlockButtonDelegate { get; set; }
-
-        // @property (assign, nonatomic) BOOL unlockButtonHidden;
-        [Export("unlockButtonHidden")]
-        bool UnlockButtonHidden { get; set; }
-
-        // @property (readonly, nonatomic) NSTimeInterval autoCloseTimeout;
-        [Export("autoCloseTimeout")]
-        double AutoCloseTimeout { get; }
-
-        // +(NSNotificationName)resetBarTimer_Notification;
-        [Static]
-        [Export("resetBarTimer_Notification")]
-        //[Verify(MethodToProperty)]
-        string ResetBarTimer_Notification { get; }
-
-        // +(void)sendResetBarTimerNotification;
-        [Static]
-        [Export("sendResetBarTimerNotification")]
-        void SendResetBarTimerNotification();
-
-        // +(void)sendResetBarTimerNotificationWithInterval:(NSTimeInterval)newInterval;
-        [Static]
-        [Export("sendResetBarTimerNotificationWithInterval:")]
-        void SendResetBarTimerNotificationWithInterval(double newInterval);
-
-        // +(NSNotificationName)cancelBarTimer_Notification;
-        [Static]
-        [Export("cancelBarTimer_Notification")]
-        //[Verify(MethodToProperty)]
-        string CancelBarTimer_Notification { get; }
-
-        // +(void)sendCancelBarTimerNotification;
-        [Static]
-        [Export("sendCancelBarTimerNotification")]
-        void SendCancelBarTimerNotification();
     }
 
 }

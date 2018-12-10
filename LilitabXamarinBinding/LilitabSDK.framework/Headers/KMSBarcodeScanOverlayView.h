@@ -22,7 +22,7 @@ IB_DESIGNABLE
 
 @property (nonatomic,copy) void(^cancelPressBlock)(void);                   // This block is called if cancel is pressed.
 
--(void) startScanner:(NSString*)scanSDK onCamera:(NSString*)camera;         // ScanSDK = "Apple", "Manatee", or "off"
+-(void) startScanner:(NSString*)scanSDK onCamera:(NSString*)camera;         // ScanSDK = "Apple", "Scandit", or "off"
                                                                             // camera = "front" or "back"
 -(void) stopScanner;
 

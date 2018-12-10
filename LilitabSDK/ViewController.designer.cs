@@ -15,25 +15,52 @@ namespace LilitabSDK
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextView textView { get; set; }
+        UIKit.UIButton ledButton { get; set; }
 
-        [Action ("endoStartAction:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void endoStartAction (UIKit.UIButton sender);
+        UIKit.UITextView outputTextView { get; set; }
 
-        [Action ("endoStopAction:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void endoStopAction (UIKit.UIButton sender);
+        UIKit.UIButton statusButton { get; set; }
 
-        [Action ("statusButtonAction:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void statusButtonAction (UIKit.UIButton sender);
+        UIKit.UIButton swipeButton { get; set; }
+
+        [Action ("buttonLED:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void buttonLED (UIKit.UIButton sender);
+
+        [Action ("buttonStatus:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void buttonStatus (UIKit.UIButton sender);
+
+        [Action ("buttonSwipe:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void buttonSwipe (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (textView != null) {
-                textView.Dispose ();
-                textView = null;
+            if (ledButton != null) {
+                ledButton.Dispose ();
+                ledButton = null;
+            }
+
+            if (outputTextView != null) {
+                outputTextView.Dispose ();
+                outputTextView = null;
+            }
+
+            if (statusButton != null) {
+                statusButton.Dispose ();
+                statusButton = null;
+            }
+
+            if (swipeButton != null) {
+                swipeButton.Dispose ();
+                swipeButton = null;
             }
         }
     }

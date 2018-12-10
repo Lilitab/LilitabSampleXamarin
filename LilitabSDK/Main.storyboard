@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,78 +17,72 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="197">
-                                <rect key="frame" x="144" y="42" width="127" height="30"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.058823529411764705" green="0.63529411764705879" blue="0.8" alpha="1"/>
-                                <state key="normal" title="Endo Start">
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="197" enabled="NO">
+                                <rect key="frame" x="66.5" y="50" width="187" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Status"/>
                                 <connections>
-                                    <action selector="endoStartAction:" destination="BYZ-38-t0r" id="5956" eventType="touchUpInside"/>
+                                    <action selector="buttonStatus:" destination="BYZ-38-t0r" id="7387" eventType="touchUpInside"/>
                                 </connections>
                                 <constraints>
-                                    <constraint id="5701" firstAttribute="height" constant="30"/>
-                                    <constraint id="5702" firstAttribute="width" constant="127"/>
+                                    <constraint id="7349" firstAttribute="height" constant="40"/>
+                                    <constraint id="7351" firstAttribute="width" constant="187"/>
                                 </constraints>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="5696" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="20" y="254" width="374" height="229"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="5696" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="270" width="288" height="284"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <constraints>
-                                    <constraint id="5700" firstAttribute="height" constant="229"/>
-                                </constraints>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5920">
-                                <rect key="frame" x="144" y="92" width="127" height="30"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.058823529411764705" green="0.63529411764705879" blue="0.8" alpha="1"/>
-                                <state key="normal" title="Endo Stop">
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7342" enabled="NO">
+                                <rect key="frame" x="66.5" y="120" width="187" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Enable Swipe"/>
                                 <connections>
-                                    <action selector="statusButtonAction:" destination="5922" eventType="touchUpInside" id="5921"/>
-                                    <action selector="endoStopAction:" destination="BYZ-38-t0r" id="6616" eventType="touchUpInside"/>
+                                    <action selector="statusButtonAction:" destination="7344" id="7343" eventType="touchUpInside"/>
+                                    <action selector="buttonSwipe:" destination="BYZ-38-t0r" id="7386" eventType="touchUpInside"/>
                                 </connections>
                                 <constraints>
-                                    <constraint id="5923" firstAttribute="height" constant="30"/>
-                                    <constraint id="5924" firstAttribute="width" constant="127"/>
+                                    <constraint id="7354" firstAttribute="height" constant="40"/>
+                                    <constraint id="7355" firstAttribute="width" constant="187"/>
                                 </constraints>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5925">
-                                <rect key="frame" x="144" y="142" width="127" height="30"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.058823529411764705" green="0.63529411764705879" blue="0.8" alpha="1"/>
-                                <state key="normal" title="Lilitab Status">
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7345" enabled="NO">
+                                <rect key="frame" x="66.5" y="190" width="187" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="LED"/>
                                 <connections>
-                                    <action selector="statusButtonAction:" destination="5927" eventType="touchUpInside" id="5926"/>
-                                    <action selector="statusButtonAction:" destination="BYZ-38-t0r" id="6171" eventType="touchUpInside"/>
+                                    <action selector="statusButtonAction:" destination="7347" id="7346" eventType="touchUpInside"/>
+                                    <action selector="buttonLED:" destination="BYZ-38-t0r" id="7388" eventType="touchUpInside"/>
                                 </connections>
                                 <constraints>
-                                    <constraint id="5928" firstAttribute="height" constant="30"/>
-                                    <constraint id="5929" firstAttribute="width" constant="127"/>
+                                    <constraint id="7358" firstAttribute="height" constant="40"/>
+                                    <constraint id="7362" firstAttribute="width" constant="187"/>
                                 </constraints>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint id="5693" firstItem="197" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22"/>
-                            <constraint id="5694" firstItem="197" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
-                            <constraint id="5698" firstItem="5696" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
-                            <constraint id="5699" firstItem="5696" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
-                            <constraint id="5932" firstItem="5920" firstAttribute="top" secondItem="197" secondAttribute="bottom" constant="20"/>
-                            <constraint id="5933" firstItem="5920" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
-                            <constraint id="5934" firstItem="5925" firstAttribute="top" secondItem="5920" secondAttribute="bottom" constant="20"/>
-                            <constraint id="5935" firstItem="5925" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
-                            <constraint id="5938" firstItem="5696" firstAttribute="top" secondItem="5925" secondAttribute="bottom" constant="82"/>
+                            <constraint id="7348" firstItem="197" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30"/>
+                            <constraint id="7352" firstItem="197" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="7353" firstItem="7342" firstAttribute="top" secondItem="197" secondAttribute="bottom" constant="30"/>
+                            <constraint id="7356" firstItem="7342" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="7357" firstItem="7345" firstAttribute="top" secondItem="7342" secondAttribute="bottom" constant="30"/>
+                            <constraint id="7360" firstItem="7345" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="7364" firstItem="5696" firstAttribute="top" secondItem="7345" secondAttribute="bottom" constant="40"/>
+                            <constraint id="7365" firstItem="5696" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="7366" firstItem="5696" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="7367" firstItem="wfy-db-euE" firstAttribute="top" secondItem="5696" secondAttribute="bottom" constant="14"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="5696" id="name-outlet-5696"/>
+                        <outlet property="outputTextView" destination="5696" id="name-outlet-5696"/>
+                        <outlet property="statusButton" destination="197" id="name-outlet-197"/>
+                        <outlet property="swipeButton" destination="7342" id="name-outlet-7342"/>
+                        <outlet property="ledButton" destination="7345" id="name-outlet-7345"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

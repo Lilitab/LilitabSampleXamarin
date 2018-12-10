@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol KMSUnlockButtonDelegate <NSObject>
+@protocol KMSUnlockButtonDelegate
 -(void) unlock;
 @end
 

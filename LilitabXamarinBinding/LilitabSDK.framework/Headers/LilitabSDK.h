@@ -14,11 +14,12 @@ FOUNDATION_EXPORT double LilitabSDKVersionNumber;
 //! Project version string for LilitabSDK.
 FOUNDATION_EXPORT const unsigned char LilitabSDKVersionString[];
 
-#import "LilitabAccessory.h"
+#import <LilitabSDK/LilitabAccessory.h>
 #import <LilitabSDK/LilitabSignatureView.h>
 #import <LilitabSDK/LilitabSignatureOverlayView.h>
 #import <LilitabSDK/LilitabSwipeAnimationView.h>
 #import <LilitabSDK/LilitabSwipeAnimationOverlayView.h>
+#import <LilitabSDK/LilitabBLEHelpView.h>
 #import <LilitabSDK/LilitabBLEHelpOverlayView.h>
 
 #import <LilitabSDK/KMS.h>
@@ -30,11 +31,5 @@ FOUNDATION_EXPORT const unsigned char LilitabSDKVersionString[];
 #import <LilitabSDK/KMSWebView.h>
 #import <LilitabSDK/KMSLockIconView.h>
 #import <LilitabSDK/KMSDockFirmwareUpdateView.h>
-#import <LilitabSDK/KMSDockStatusViewController.h>
 #import <LilitabSDK/KMSBarcodeScanView.h>
 #import <LilitabSDK/KMSBarcodeScanOverlayView.h>
-#import <LilitabSDK/KMSReaderStatusViewController.h>
-#import <LilitabSDK/KMSGeolocateMenuViewController.h>
-#import <LilitabSDK/KMSPinpadViewController.h>
-#import <LilitabSDK/KMSPrinterStatusViewController.h>
-#import <LilitabSDK/KMSBarsViewController.h>

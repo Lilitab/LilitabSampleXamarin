@@ -1,6 +1,0 @@
-framework module Endo {
-  umbrella header "Endo.h"
-
-  export *
-  module * { export * }
-}

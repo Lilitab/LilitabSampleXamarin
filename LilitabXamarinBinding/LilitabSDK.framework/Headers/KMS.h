@@ -29,15 +29,10 @@
 -(NSURLRequest*) tabletRegistrationUrlRequest;
 -(NSURLRequest*) dockRegistrationUrlRequest;
 
--(void) showPortal;
-
 -(void) setDockLaunchAppName:(NSString*)name;
 
-
-+(NSNotificationName) NETWORK_REACHABILITY_CHANGED_Notification;
-+(NSNotificationName) KMS_SERVICE_REACHABILITY_CHANGED_Notification;
-+(NSNotificationName) HOMEPAGE_REACHABILITY_CHANGED_Notification;
-
++(NSNotificationName) KMS_WEBVIEW_REQUEST_Notification;             // Notification.object is an NSDictionary<NSString*,NSObject*>* with @"type" = @"kms" || @"user"
+                                                                    //                                                                   @"request" = NSURLRequest instance to load.
 
 +(KMS*) singleton;
 

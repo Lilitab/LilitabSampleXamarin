@@ -10,9 +10,6 @@
 
 @interface LilitabBLEHelpOverlayView : UIView
 
-+(instancetype) helpOverlay_Magtek;
-+(instancetype) helpOverlay_StarPrint;
-
 @property (atomic,copy) void(^closePressBlock)(void);        // This block is called when close is pressed.
 
 @end

@@ -129,14 +129,13 @@ typedef NS_ENUM(NSInteger)
     // Dock status events
     //
 @property (nonatomic,assign)    NSTimeInterval      dockLiveStatusInterval;
-@property (nonatomic,readonly)  NSDictionary<NSString*,NSString*>*  lastDockLiveStatus;
 
 
     /////////////////////////////////////////////////////////////////////
     // Firmware Updating
     //
 -(void) updateFirmware:(NSData*)firmware
-               options:(NSDictionary<NSString*,NSString*>*)optionsDict
+               options:(NSDictionary*)optionsDict
           withProgress:(void (^)(float percent0to1))progressBlock
         withCompletion:(void (^)(BOOL success))completionBlock;
 
