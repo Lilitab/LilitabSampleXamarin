@@ -17,7 +17,7 @@ using Foundation;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("(c) Kanhaiya Kumar")]
+[assembly: AssemblyCopyright("(c) Lilitab llc")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

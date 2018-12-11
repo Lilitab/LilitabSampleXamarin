@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LilitabXamarinBinding", "LilitabXamarinBinding\LilitabXamarinBinding.csproj", "{0D187B8C-1117-4048-924D-68C674A3B19B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LilitabSDK", "LilitabSDK\LilitabSDK.csproj", "{BCCBBF2D-C688-4977-97C1-66CF4A6F8223}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LilitabSample", "LilitabSDK\LilitabSample.csproj", "{BCCBBF2D-C688-4977-97C1-66CF4A6F8223}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
